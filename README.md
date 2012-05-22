@@ -1,5 +1,8 @@
 # Baldwin
 
+**TODO:** provide a default rails template
+**TODO:** add generated rails apps to .gitignore
+
 TODO: Write a gem description
 
 ## Installation

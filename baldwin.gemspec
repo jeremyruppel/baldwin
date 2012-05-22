@@ -4,8 +4,8 @@ require File.expand_path('../lib/baldwin/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Jeremy Ruppel"]
   gem.email         = ["jeremy.ruppel@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Bootstrap testing your rails 3 engine}
+  gem.summary       = %q{Bootstrap testing your rails 3 engine}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
