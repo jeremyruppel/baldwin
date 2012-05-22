@@ -15,5 +15,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Baldwin::VERSION
 
-  gem.add_development_dependency 'appraisal', '>= 0.4.1'
+  gem.add_dependency 'appraisal', '>= 0.4.1'
 end
