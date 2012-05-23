@@ -6,7 +6,7 @@ module Baldwin
 
     def ignore_dummy_rails_apps
       append_to_file '.gitignore', <<-EOS
-spec/support/rails-*
+spec/rails/rails-*
 EOS
     end
 
