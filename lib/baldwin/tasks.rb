@@ -24,7 +24,7 @@ namespace :baldwin do
     if File.exist? ENV[ 'BALDWIN_RAILS_PATH' ]
       puts "Using existing #{ENV[ 'BALDWIN_RAILS_NAME' ]} app"
     else
-      sh "bundle exec rails new #{ENV[ 'BALDWIN_RAILS_PATH' ]} -m spec/support/rails_template.rb"
+      sh "bundle exec rails new #{ENV[ 'BALDWIN_RAILS_PATH' ]} -m spec/rails/rails_template.rb"
     end
   end
 
