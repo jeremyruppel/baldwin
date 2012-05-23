@@ -1,4 +1,5 @@
 require 'appraisal'
+require 'baldwin'
 
 include Rake::DSL
 
@@ -25,5 +26,10 @@ namespace :baldwin do
     else
       sh "bundle exec rails new #{ENV[ 'BALDWIN_RAILS_PATH' ]} -m spec/support/rails_template.rb"
     end
+  end
+
+  desc "Install testing awesomeness"
+  task :install do
+    Baldwin::Installer.start
   end
 end

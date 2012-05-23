@@ -1,5 +1,5 @@
-require "baldwin/version"
+require 'baldwin/version'
 
 module Baldwin
-  # Your code goes here...
+  autoload :Installer, 'baldwin/installer'
 end

@@ -16,4 +16,5 @@ Gem::Specification.new do |gem|
   gem.version       = Baldwin::VERSION
 
   gem.add_dependency 'appraisal', '>= 0.4.1'
+  gem.add_dependency 'thor',      '>= 0.15.2'
 end
