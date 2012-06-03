@@ -1,5 +1,6 @@
 require 'appraisal'
 require 'baldwin'
+require 'rspec/core/rake_task'
 
 include Rake::DSL
 
@@ -33,3 +34,11 @@ namespace :baldwin do
     Baldwin::Installer.start
   end
 end
+
+RSpec::Core::RakeTask.new :rspec => [ :'baldwin:env', :'baldwin:rails' ]
+
+desc "Run specs for all supported rails versions"
+task :spec => :rspec
+
+desc "Default: Clean, install dependencies, and run specs"
+task :default => [ :'baldwin:clean', :'appraisal:install', :spec ]

@@ -15,7 +15,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Baldwin::VERSION
 
-  gem.add_dependency 'rails',     '>= 3.0.0'
-  gem.add_dependency 'appraisal', '>= 0.4.1'
-  gem.add_dependency 'thor',      '>= 0.14.6'
+  gem.add_dependency 'rails',       '>= 3.0.0'
+  gem.add_dependency 'rspec-rails', '>= 2.10.0'
+  gem.add_dependency 'appraisal',   '>= 0.4.1'
+  gem.add_dependency 'thor',        '>= 0.14.6'
 end

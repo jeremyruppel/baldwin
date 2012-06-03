@@ -25,29 +25,8 @@ EOS
 EOS
     end
 
-    def add_appraisal_rake_task
-      # TODO figure out why this isn't in Thor 0.15 +
-      # TODO also, ask those guys why they haven't
-      # updated their version.rb in two years. wtf.
-      # comment_lines 'Rakefile', /RSpec::Core::RakeTask/
-      flag = 'RSpec::Core::RakeTask.new'
-      gsub_file 'Rakefile', /^(\s*)([^#|\n]*#{flag})/, '\1# \2'
-
-      append_to_file 'Rakefile', <<-EOS
-RSpec::Core::RakeTask.new :spec => [ :'baldwin:env', :'baldwin:rails' ]
-
-desc "Run specs for all supported rails versions"
-task :all do
-  exec 'rake appraisal spec'
-end
-
-desc "Default: Clean, install dependencies, and run specs"
-task :default => [ :'baldwin:clean', :'appraisal:install', :all ]
-EOS
-    end
-
     def add_baldwin_setup_to_spec_helper
-      prepend_to_file 'spec/spec_helper.rb', <<-EOS
+      create_file 'spec/spec_helper.rb', <<-EOS
 require 'baldwin/setup'
 # require test dependencies *after* baldwin/setup
 EOS
