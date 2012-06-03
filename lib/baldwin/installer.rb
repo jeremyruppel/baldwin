@@ -34,8 +34,6 @@ EOS
       gsub_file 'Rakefile', /^(\s*)([^#|\n]*#{flag})/, '\1# \2'
 
       append_to_file 'Rakefile', <<-EOS
-require 'baldwin/tasks'
-
 RSpec::Core::RakeTask.new :spec => [ :'baldwin:env', :'baldwin:rails' ]
 
 desc "Run specs for all supported rails versions"
@@ -51,9 +49,7 @@ EOS
     def add_baldwin_setup_to_spec_helper
       prepend_to_file 'spec/spec_helper.rb', <<-EOS
 require 'baldwin/setup'
-# require test helpers _after_ baldwin/setup
-# require 'rspec/rails'
-# require 'shoulda'
+# require test dependencies *after* baldwin/setup
 EOS
     end
 
