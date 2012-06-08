@@ -3,12 +3,13 @@ require 'baldwin/version'
 module Baldwin
   autoload :Installer, 'baldwin/installer'
 
-  RAILS_PATTERN = 'spec/rails/rails-*'
+  RAILS_DIRNAME = 'spec/rails'
+  RAILS_PATTERN = "#{RAILS_DIRNAME}/rails-*"
 
   def self.env!
     require 'rails/version'
     ENV[ 'BALDWIN_RAILS_NAME' ] = "rails-#{Rails::VERSION::STRING}"
-    ENV[ 'BALDWIN_RAILS_PATH' ] = "spec/rails/#{ENV[ 'BALDWIN_RAILS_NAME' ]}"
+    ENV[ 'BALDWIN_RAILS_PATH' ] = "#{RAILS_DIRNAME}/#{ENV[ 'BALDWIN_RAILS_NAME' ]}"
   end
 
   def self.root
