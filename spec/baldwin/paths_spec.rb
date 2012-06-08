@@ -21,7 +21,7 @@ describe Baldwin do
   describe '#rails' do
     subject { Baldwin.rails }
     it { should be_a( Pathname ) }
-    its( :to_s ){ should eq( ENV[ 'BALDWIN_RAILS_PATH' ] ) }
+    its( :to_s ){ should eq( File.join( Dir.pwd, ENV[ 'BALDWIN_RAILS_PATH' ] ) ) }
   end
 
   describe '#apps' do

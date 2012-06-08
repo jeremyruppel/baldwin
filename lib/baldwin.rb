@@ -16,7 +16,7 @@ module Baldwin
   end
 
   def self.rails
-    Pathname.new ENV[ 'BALDWIN_RAILS_PATH' ]
+    root.join ENV[ 'BALDWIN_RAILS_PATH' ]
   end
 
   def self.apps
