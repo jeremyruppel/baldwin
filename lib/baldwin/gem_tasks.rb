@@ -13,9 +13,7 @@ namespace :baldwin do
 
   desc "Remove all test rails apps"
   task :clean => [ :env ] do
-    Dir[ 'spec/rails/rails-*' ].each do |app|
-      FileUtils.rm_rf app
-    end
+    Baldwin.apps.each { |app| app.rmdir :force => true }
   end
 
   desc "Create a test rails app if necessary"
