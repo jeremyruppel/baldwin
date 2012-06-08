@@ -8,9 +8,7 @@ namespace :baldwin do
 
   desc "Set up current environment variables"
   task :env do
-    require 'rails/version'
-    ENV[ 'BALDWIN_RAILS_NAME' ] = "rails-#{Rails::VERSION::STRING}"
-    ENV[ 'BALDWIN_RAILS_PATH' ] = "spec/rails/#{ENV[ 'BALDWIN_RAILS_NAME' ]}"
+    Baldwin.env!
   end
 
   desc "Remove all test rails apps"
