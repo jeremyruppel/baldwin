@@ -21,6 +21,6 @@ module Baldwin
   end
 
   def self.apps
-    Dir[ RAILS_PATTERN ]
+    Dir[ RAILS_PATTERN ].map { |app| Pathname.new app }
   end
 end
