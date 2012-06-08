@@ -29,6 +29,13 @@ namespace :baldwin do
   task :install do
     Baldwin::Installer.start
   end
+
+  desc "Start up a dummy application"
+  task :server => :'baldwin:env' do
+    APP_PATH = Baldwin.rails.join 'config/application'
+    require Baldwin.rails.join 'config/boot'
+    require 'rails/commands' # this automatically runs 'rails server'
+  end
 end
 
 RSpec::Core::RakeTask.new :rspec => [ :'baldwin:env', :'baldwin:rails' ]
